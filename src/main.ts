@@ -128,6 +128,12 @@ form.addEventListener('submit', handleSubmit)
 form.reset()
 
 async function getData(){
-  const res = await axios.get('http://localhost:3000/registers')
+  const res = await axios.get('http://localhost:3000/registers',{
+    headers:{
+      "Access-Control-Allow-Methods":"GET, POST, DELETE",
+      "Access-Control-Allow-Headers":"Authorization",
+      "Access-Control-Allow-Origin":"*"
+    }
+  })
   return res.data 
 }
